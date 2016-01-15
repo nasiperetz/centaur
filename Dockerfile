@@ -10,7 +10,7 @@
 FROM vertx/vertx3
 
 # Set the name of the verticle to deploy    <2>
-ENV VERTICLE_NAME hello-verticle.js
+ENV VERTICLE_NAME server.js
 
 # Set the location of the verticles         <3>
 ENV VERTICLE_HOME /usr/verticles
