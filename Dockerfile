@@ -1,26 +1,20 @@
-###
-# vert.x docker example using a JavaScript verticle
-# To build:
-#  docker build -t sample/vertx-javascript .
-# To run:
-#   docker run -t -i -p 8080:8080 sample/vertx-javascript
-###
-
-# Extend vert.x image                       <1>
+# Extend vert.x image
 FROM vertx/vertx3
 
-# Set the name of the verticle to deploy    <2>
-ENV VERTICLE_NAME server.js
+#                                                       (1)
+ENV VERTICLE_NAME io.vertx.example.web.staticsite.Server
+ENV VERTICLE_FILE target/web-examples-3.2.0.jar
 
-# Set the location of the verticles         <3>
+# Set the location of the verticles
 ENV VERTICLE_HOME /usr/verticles
 
 EXPOSE 8080
 
-# Copy your verticle to the container       <4>
-COPY $VERTICLE_NAME $VERTICLE_HOME/
+# Copy your verticle to the container                   (2)
+COPY $VERTICLE_FILE $VERTICLE_HOME/
+COPY target/webroot $VERTICLE_HOME/webroot
 
-# Launch the verticle                       <5>
+# Launch the verticle
 WORKDIR $VERTICLE_HOME
 ENTRYPOINT ["sh", "-c"]
 CMD ["vertx run $VERTICLE_NAME -cp $VERTICLE_HOME/*"]
