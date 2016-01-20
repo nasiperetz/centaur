@@ -313,7 +313,7 @@ blockquote:last-child {
 /* ------------------------------------------------------------ *	Logo
 \* ------------------------------------------------------------ */
 .logo {
-  background-image: url(images/sprite.png);
+  background-image: url(../img/sprite.png);
   background-position: 0 -88px;
   width: 162px;
   height: 22px;
@@ -324,7 +324,7 @@ blockquote:last-child {
   margin: 8px 25px 0 0; }
   @media (max-width: 767px) {
     .logo {
-      background: url(images/logo@2x.png) no-repeat 0 0;
+      background: url(../img/logo@2x.png) no-repeat 0 0;
       width: 102px;
       height: 14px;
       background-size: 102px 14px;
@@ -344,7 +344,7 @@ blockquote:last-child {
       width: 85px; } }
 
 .logo-verified {
-  background-image: url(images/sprite.png);
+  background-image: url(../img/sprite.png);
   background-position: 0 -60px;
   width: 158px;
   height: 24px;
